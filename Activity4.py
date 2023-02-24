@@ -17,6 +17,21 @@ def DoHeadsAndTails():
         print("YOU DIDN'T CHOOSE HEADS OR TAILS! WHAT???")
 #Pol Besalú
 
+def play():
+    user = input("Enter 'r' for rock, 'p' for paper, or 's' for scissors: ")
+    computer = random.choice(['r', 'p', 's'])
+
+    if user == computer:
+        return 'It\'s a tie!'
+
+    if is_win(user, computer):
+        return 'You won!'
+
+    return 'You lost!'
+
+
+
+print(play())
 #Martí Roura
 
 
