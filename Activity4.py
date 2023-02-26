@@ -28,15 +28,20 @@ def DoHeadsAndTails():
 def DoRockPaperScissors():
 
     def play():
+        #It asks you to enter a character r, p or s to choose between rock, paper and scissors.
         user = input("Enter 'r' for rock, 'p' for paper, or 's' for scissors: ")
+        #The computer chooses randomly between r, p and s.
         computer = random.choice(['r', 'p', 's'])
 
+        #This option is the tie if the two have the same selection.
         if user == computer:
             return 'It\'s a tie!'
 
+        #This option if the user won the computer
         if is_win(user, computer):
             return 'You won!'
 
+        #And finally the option if the user loses against the computer.
         return 'You lost!'
 
     def is_win(player, opponent):
