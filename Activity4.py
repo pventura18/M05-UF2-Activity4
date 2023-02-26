@@ -51,7 +51,7 @@ def DoEvensAndOdds():
     
     #we ask a number between 0 and 5, if it's not valid we ask it again
     playerNumber = AskEvensAndOddsNumber()
-    while (playerNumber < 0 and playerNumber > 5):
+    while (playerNumber < 0 or playerNumber > 5):
         playerNumber = AskEvensAndOddsNumber()
     
     #we compute the computer's number and if the result is even or odd
