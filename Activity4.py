@@ -39,6 +39,41 @@ def DoRockPaperScissors():
     print(play())
     
 #Martí Roura
+def DoEvensAndOdds(): 
+    print("In this game you choose EVENS or ODDS.")
+    print("Then you and the computer choose a number from 0 to 5.")
+    print("The winner is based on the sum of those numbers.")
+    
+    playerOption = AskEvensAndOddsOption()
+    
+    while (playerOption != 1 and playerOption != 2):
+        playerOption = AskEvensAndOddsOption()
+    
+    playerNumber = AskEvensAndOddsNumber()
+    while (playerNumber < 0 and playerNumber > 5):
+        playerNumber = AskEvensAndOddsNumber()
+    
+    computerNumber = random.randint(0, 5)
+    resultNumber = playerNumber + computerNumber
+    isEven = resultNumber % 2 == 0
+
+    print(f"The result is {playerNumber} + {computerNumber} = {resultNumber}")
+    if playerOption == 1:
+        if isEven:
+            print("Congratulations you WON!")
+        else:
+            print("I'm sorry you LOST :(")
+    if playerOption == 2:
+        if isEven:
+            print("I'm sorry you LOST :(")
+        else:
+            print("Congratulations you WON!")
+
+def AskEvensAndOddsOption():
+    return int(input("Now choose: \nPress 1 for EVENS \nPress 2 for ODDS\n"))
+
+def AskEvensAndOddsNumber():
+    return int(input("Now choose a number from 0 to 5\n"))
 
 
 
@@ -60,11 +95,13 @@ while flag == True:
     0) EXIT
     """)
     
-    opcio = int(input("CHOOSE AN OPTIONS --> "))
+    opcio = int(input("CHOOSE AN OPTION --> "))
     if opcio == 1:
         DoHeadsAndTails()
     elif opcio == 2:
         DoRockPaperScissors()
+    elif opcio == 3:
+        DoEvensAndOdds()
     elif opcio == 0:
         flag = False
         
