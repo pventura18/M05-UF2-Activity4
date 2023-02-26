@@ -44,19 +44,22 @@ def DoEvensAndOdds():
     print("Then you and the computer choose a number from 0 to 5.")
     print("The winner is based on the sum of those numbers.")
     
+    #if the number given is not 1 or 2 we ask it again
     playerOption = AskEvensAndOddsOption()
-    
     while (playerOption != 1 and playerOption != 2):
         playerOption = AskEvensAndOddsOption()
     
+    #we ask a number between 0 and 5, if it's not valid we ask it again
     playerNumber = AskEvensAndOddsNumber()
     while (playerNumber < 0 and playerNumber > 5):
         playerNumber = AskEvensAndOddsNumber()
     
+    #we compute the computer's number and if the result is even or odd
     computerNumber = random.randint(0, 5)
     resultNumber = playerNumber + computerNumber
     isEven = resultNumber % 2 == 0
 
+    #we print the final result
     print(f"The result is {playerNumber} + {computerNumber} = {resultNumber}")
     if playerOption == 1:
         if isEven:
@@ -69,16 +72,13 @@ def DoEvensAndOdds():
         else:
             print("Congratulations you WON!")
 
+#we ask for a number that represents EVEN or ODDS as the user option
 def AskEvensAndOddsOption():
     return int(input("Now choose: \nPress 1 for EVENS \nPress 2 for ODDS\n"))
 
+#we ask for a number from 0 to 5
 def AskEvensAndOddsNumber():
     return int(input("Now choose a number from 0 to 5\n"))
-
-
-
-
-
 
 opcio = 0
 flag = True
